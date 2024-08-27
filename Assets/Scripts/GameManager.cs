@@ -59,6 +59,8 @@ public class GameManager : MonoBehaviour
 
         if (_isDragging)
         {
+            Debug.Log(" _isDragging");
+
             OnfingerDrag(finger);
         }
     }
@@ -74,7 +76,7 @@ public class GameManager : MonoBehaviour
 
     private void OnfingerDrag(LeanFinger finger)
     {
-        if (_objectSelected != null)
+        if (_transformSelect != null)
         {
             // Vector3 currentPosition = _camera.ScreenToWorldPoint(finger.ScreenPosition) + offset;
             Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
