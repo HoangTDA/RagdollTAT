@@ -3,14 +3,13 @@ using UnityEngine;
 public class RagdollControll : BaseInteract
 {
     [SerializeField] private Rigidbody[] _rigidbodies;
-    [SerializeField] private Animator _animations;
     [SerializeField] private GameObject _obstacle;
     public float Durability = 10f;
 
     private void Start()
     {
         _rigidbodies = GetComponentsInChildren<Rigidbody>();
-        SetStateRagdoll(true);
+       // SetStateRagdoll(true);
     }
 
     public void SetStateRagdoll(bool isOn)
@@ -43,7 +42,7 @@ public class RagdollControll : BaseInteract
 
     public void AnimatorState()
     {
-        _animations.enabled = true;
+       
         //_obstacle.transform.position = _vector3Position;
         //_obstacle.transform.rotation = Quaternion.identity;
     }

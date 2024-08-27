@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        _resetButton.onClick.AddListener(_ragdollControll.AnimatorState);
+       // _resetButton.onClick.AddListener(_ragdollControll.AnimatorState);
         _ragdollBtn.onClick.AddListener(() => { _ragdollControll.SetStateRagdoll(false); });
         _camera = Camera.main;
     }
@@ -79,7 +79,9 @@ public class GameManager : MonoBehaviour
             // Vector3 currentPosition = _camera.ScreenToWorldPoint(finger.ScreenPosition) + offset;
             Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
             Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
+            curPosition = Vector3.Normalize( curPosition );
             Debug.Log($"currentPosition {curPosition} offset {offset}");
+            
             _rb.AddForceAtPosition(curPosition * _forceImpact, screenPoint, ForceMode.Acceleration);
             //  _objectSelected.OnDrag(curPosition);
             // LeanDragCamera.
