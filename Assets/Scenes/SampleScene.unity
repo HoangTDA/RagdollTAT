@@ -183,7 +183,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!153 &68819926
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -565,7 +565,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &141443651
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,7 +659,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 151025143}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 9f83be3f1d0431c42944ba36f395c1f1, type: 3}
   m_Controller: {fileID: 9100000, guid: 72391790459d735498b29338b91b6d83, type: 2}
   m_CullingMode: 1
@@ -832,6 +832,111 @@ Transform:
   - {fileID: 643844014}
   m_Father: {fileID: 1084246709}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &250506403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 250506407}
+  - component: {fileID: 250506406}
+  - component: {fileID: 250506405}
+  - component: {fileID: 250506404}
+  m_Layer: 0
+  m_Name: Cube (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &250506404
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250506403}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &250506405
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250506403}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &250506406
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250506403}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &250506407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250506403}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: -1.96, y: 2.3, z: 0}
+  m_LocalScale: {x: 1, y: 50, z: 50}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
 --- !u!1 &282194619
 GameObject:
   m_ObjectHideFlags: 0
@@ -2369,7 +2474,7 @@ Transform:
   m_GameObject: {fileID: 1149880140}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -5.099}
+  m_LocalPosition: {x: 0, y: 0, z: -7.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2436,7 +2541,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!153 &1186404805
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -2588,7 +2693,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &1186404813
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2740,7 +2845,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!153 &1186404816
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -2892,7 +2997,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!54 &1215303937
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2919,7 +3024,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!153 &1215303938
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -3108,6 +3213,111 @@ Transform:
   m_Children:
   - {fileID: 911460836}
   m_Father: {fileID: 604217932}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1267464359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1267464363}
+  - component: {fileID: 1267464362}
+  - component: {fileID: 1267464361}
+  - component: {fileID: 1267464360}
+  m_Layer: 0
+  m_Name: Cube (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1267464360
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267464359}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1267464361
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267464359}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1267464362
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267464359}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1267464363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267464359}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.96, y: 23.7, z: 0}
+  m_LocalScale: {x: 1, y: 50, z: 50}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1294120309
 GameObject:
@@ -3719,7 +3929,112 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
+--- !u!1 &1429035725
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1429035729}
+  - component: {fileID: 1429035728}
+  - component: {fileID: 1429035727}
+  - component: {fileID: 1429035726}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1429035726
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429035725}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1429035727
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429035725}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1429035728
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429035725}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1429035729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429035725}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.18, y: 23.4, z: 0}
+  m_LocalScale: {x: 1, y: 50, z: 50}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1441984949
 GameObject:
   m_ObjectHideFlags: 0
@@ -4168,7 +4483,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!153 &1546790823
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -4320,7 +4635,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &1550134741
 GameObject:
   m_ObjectHideFlags: 0
@@ -5007,7 +5322,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!153 &1880923393
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -5167,7 +5482,7 @@ MonoBehaviour:
   _ragdollControll: {fileID: 151025145}
   _camera: {fileID: 963194227}
   _transformSelect: {fileID: 0}
-  _forceImpact: 5
+  _forceImpact: 1.2
 --- !u!4 &1926632221
 Transform:
   m_ObjectHideFlags: 0
@@ -6087,14 +6402,14 @@ MonoBehaviour:
   mappingWeight: 1
   pinWeight: 0
   muscleWeight: 1
-  muscleSpring: 100
+  muscleSpring: 80
   muscleDamper: 0
-  pinPow: 4
-  pinDistanceFalloff: 5
-  angularPinning: 0
+  pinPow: 1.45
+  pinDistanceFalloff: 100
+  angularPinning: 1
   updateJointAnchors: 1
   supportTranslationAnimation: 0
-  angularLimits: 0
+  angularLimits: 1
   internalCollisions: 0
   muscles:
   - name: mixamorig:Hips
@@ -6112,12 +6427,12 @@ MonoBehaviour:
         groups: 
       animatedTargetChildren: []
     parentIndexes: 
-    childIndexes: 
-    childFlags: 
-    kinshipDegrees: 
+    childIndexes: 0100000002000000030000000400000005000000060000000700000008000000090000000a000000
+    childFlags: 0001010101010101010101
+    kinshipDegrees: 0000000001000000020000000100000002000000010000000200000003000000020000000200000003000000
     broadcaster: {fileID: 0}
     jointBreakBroadcaster: {fileID: 0}
-    positionOffset: {x: 0, y: 0, z: 0}
+    positionOffset: {x: -1.1936885, y: 0.77781266, z: -0.44751167}
     additionalPin: {fileID: 0}
     additionalPinTarget: {fileID: 0}
     additionalPinWeight: 0
@@ -6126,8 +6441,8 @@ MonoBehaviour:
     isPropMuscle: 0
     index: 0
     ignoreTargetVelocity: 0
-    targetMappedPosition: {x: 0, y: 0, z: 0}
-    targetMappedRotation: {x: 0, y: 0, z: 0, w: 1}
+    targetMappedPosition: {x: 1.1253463, y: 0.072912164, z: -6.623498}
+    targetMappedRotation: {x: 0.4738159, y: 0.56124115, z: 0.51071286, w: -0.44685498}
     targetSampledPosition: {x: 0, y: 0, z: 0}
     targetSampledRotation: {x: 0, y: 0, z: 0, w: 1}
   - name: mixamorig:LeftUpLeg
@@ -6136,31 +6451,31 @@ MonoBehaviour:
     props:
       group: 5
       mappingWeight: 1
-      pinWeight: 1
-      muscleWeight: 1
+      pinWeight: 0
+      muscleWeight: 0
       muscleDamper: 1
       internalCollisionIgnores:
         ignoreAll: 0
         muscles: []
         groups: 
       animatedTargetChildren: []
-    parentIndexes: 
-    childIndexes: 
-    childFlags: 
-    kinshipDegrees: 
+    parentIndexes: 00000000
+    childIndexes: 02000000
+    childFlags: 0000010000000000000000
+    kinshipDegrees: 0100000000000000010000000200000003000000020000000300000004000000030000000300000004000000
     broadcaster: {fileID: 0}
     jointBreakBroadcaster: {fileID: 0}
-    positionOffset: {x: 0, y: 0, z: 0}
+    positionOffset: {x: -0.8899809, y: 0.49413246, z: -0.30648613}
     additionalPin: {fileID: 0}
     additionalPinTarget: {fileID: 0}
     additionalPinWeight: 0
-    mappedVelocity: {x: 0, y: 0, z: 0}
+    mappedVelocity: {x: 0, y: 0.00000353827, z: -0.00002830616}
     mappedAngularVelocity: {x: 0, y: 0, z: 0}
     isPropMuscle: 0
     index: 1
     ignoreTargetVelocity: 0
     targetMappedPosition: {x: 0, y: 0, z: 0}
-    targetMappedRotation: {x: 0, y: 0, z: 0, w: 1}
+    targetMappedRotation: {x: 0.5968938, y: -0.37250894, z: -0.2112042, w: -0.6784893}
     targetSampledPosition: {x: 0, y: 0, z: 0}
     targetSampledRotation: {x: 0, y: 0, z: 0, w: 1}
   - name: mixamorig:LeftLeg
@@ -6177,23 +6492,23 @@ MonoBehaviour:
         muscles: []
         groups: 
       animatedTargetChildren: []
-    parentIndexes: 
+    parentIndexes: 0100000000000000
     childIndexes: 
-    childFlags: 
-    kinshipDegrees: 
+    childFlags: 0000000000000000000000
+    kinshipDegrees: 0200000001000000000000000300000004000000030000000400000005000000040000000400000005000000
     broadcaster: {fileID: 0}
     jointBreakBroadcaster: {fileID: 0}
-    positionOffset: {x: 0, y: 0, z: 0}
+    positionOffset: {x: -0.5465877, y: 0.13167618, z: -0.060338497}
     additionalPin: {fileID: 0}
     additionalPinTarget: {fileID: 0}
     additionalPinWeight: 0
-    mappedVelocity: {x: 0, y: 0, z: 0}
+    mappedVelocity: {x: 0.000035382698, y: -0.0000123839445, z: 0}
     mappedAngularVelocity: {x: 0, y: 0, z: 0}
     isPropMuscle: 0
     index: 2
     ignoreTargetVelocity: 0
     targetMappedPosition: {x: 0, y: 0, z: 0}
-    targetMappedRotation: {x: 0, y: 0, z: 0, w: 1}
+    targetMappedRotation: {x: 0.74567837, y: -0.34760502, z: -0.20458126, w: -0.5303592}
     targetSampledPosition: {x: 0, y: 0, z: 0}
     targetSampledRotation: {x: 0, y: 0, z: 0, w: 1}
   - name: mixamorig:RightUpLeg
@@ -6202,31 +6517,31 @@ MonoBehaviour:
     props:
       group: 5
       mappingWeight: 1
-      pinWeight: 1
-      muscleWeight: 1
+      pinWeight: 0
+      muscleWeight: 0
       muscleDamper: 1
       internalCollisionIgnores:
         ignoreAll: 0
         muscles: []
         groups: 
       animatedTargetChildren: []
-    parentIndexes: 
-    childIndexes: 
-    childFlags: 
-    kinshipDegrees: 
+    parentIndexes: 00000000
+    childIndexes: 04000000
+    childFlags: 0000000001000000000000
+    kinshipDegrees: 0100000002000000030000000000000001000000020000000300000004000000030000000300000004000000
     broadcaster: {fileID: 0}
     jointBreakBroadcaster: {fileID: 0}
-    positionOffset: {x: 0, y: 0, z: 0}
+    positionOffset: {x: -0.9764714, y: 0.5126046, z: -0.53066635}
     additionalPin: {fileID: 0}
     additionalPinTarget: {fileID: 0}
     additionalPinWeight: 0
-    mappedVelocity: {x: 0, y: 0, z: 0}
+    mappedVelocity: {x: -0.00000707654, y: 0.000008403391, z: -0.00002830616}
     mappedAngularVelocity: {x: 0, y: 0, z: 0}
     isPropMuscle: 0
     index: 3
     ignoreTargetVelocity: 0
     targetMappedPosition: {x: 0, y: 0, z: 0}
-    targetMappedRotation: {x: 0, y: 0, z: 0, w: 1}
+    targetMappedRotation: {x: 0.48008567, y: -0.5504571, z: -0.49979404, w: -0.46553266}
     targetSampledPosition: {x: 0, y: 0, z: 0}
     targetSampledRotation: {x: 0, y: 0, z: 0, w: 1}
   - name: mixamorig:RightLeg
@@ -6243,23 +6558,23 @@ MonoBehaviour:
         muscles: []
         groups: 
       animatedTargetChildren: []
-    parentIndexes: 
+    parentIndexes: 0300000000000000
     childIndexes: 
-    childFlags: 
-    kinshipDegrees: 
+    childFlags: 0000000000000000000000
+    kinshipDegrees: 0200000003000000040000000100000000000000030000000400000005000000040000000400000005000000
     broadcaster: {fileID: 0}
     jointBreakBroadcaster: {fileID: 0}
-    positionOffset: {x: 0, y: 0, z: 0}
+    positionOffset: {x: -0.53861386, y: 0.14862758, z: -0.5603776}
     additionalPin: {fileID: 0}
     additionalPinTarget: {fileID: 0}
     additionalPinWeight: 0
-    mappedVelocity: {x: 0, y: 0, z: 0}
+    mappedVelocity: {x: 0.00000707654, y: 0.0000123839445, z: 0}
     mappedAngularVelocity: {x: 0, y: 0, z: 0}
     isPropMuscle: 0
     index: 4
     ignoreTargetVelocity: 0
     targetMappedPosition: {x: 0, y: 0, z: 0}
-    targetMappedRotation: {x: 0, y: 0, z: 0, w: 1}
+    targetMappedRotation: {x: 0.45781484, y: -0.5293846, z: -0.58450925, w: -0.41049555}
     targetSampledPosition: {x: 0, y: 0, z: 0}
     targetSampledRotation: {x: 0, y: 0, z: 0, w: 1}
   - name: mixamorig:Spine1
@@ -6276,23 +6591,23 @@ MonoBehaviour:
         muscles: []
         groups: 
       animatedTargetChildren: []
-    parentIndexes: 
-    childIndexes: 
-    childFlags: 
-    kinshipDegrees: 
+    parentIndexes: 00000000
+    childIndexes: 060000000700000008000000090000000a000000
+    childFlags: 0000000000000101010101
+    kinshipDegrees: 0100000002000000030000000200000003000000000000000100000002000000010000000100000002000000
     broadcaster: {fileID: 0}
     jointBreakBroadcaster: {fileID: 0}
-    positionOffset: {x: 0, y: 0, z: 0}
+    positionOffset: {x: -1.3890492, y: 0.97701865, z: -0.47374678}
     additionalPin: {fileID: 0}
     additionalPinTarget: {fileID: 0}
     additionalPinWeight: 0
-    mappedVelocity: {x: 0, y: 0, z: 0}
+    mappedVelocity: {x: 0.00000707654, y: -0.0000008845675, z: 0}
     mappedAngularVelocity: {x: 0, y: 0, z: 0}
     isPropMuscle: 0
     index: 5
     ignoreTargetVelocity: 0
     targetMappedPosition: {x: 0, y: 0, z: 0}
-    targetMappedRotation: {x: 0, y: 0, z: 0, w: 1}
+    targetMappedRotation: {x: 0.4329666, y: 0.5558099, z: 0.57673, w: -0.41351905}
     targetSampledPosition: {x: 0, y: 0, z: 0}
     targetSampledRotation: {x: 0, y: 0, z: 0, w: 1}
   - name: mixamorig:LeftArm
@@ -6309,23 +6624,23 @@ MonoBehaviour:
         muscles: []
         groups: 
       animatedTargetChildren: []
-    parentIndexes: 
-    childIndexes: 
-    childFlags: 
-    kinshipDegrees: 
+    parentIndexes: 0500000000000000
+    childIndexes: 07000000
+    childFlags: 0000000000000001000000
+    kinshipDegrees: 0200000003000000040000000300000004000000010000000000000001000000020000000200000003000000
     broadcaster: {fileID: 0}
     jointBreakBroadcaster: {fileID: 0}
-    positionOffset: {x: 0, y: 0, z: 0}
+    positionOffset: {x: -1.2743782, y: 0.95567524, z: -0.31879282}
     additionalPin: {fileID: 0}
     additionalPinTarget: {fileID: 0}
     additionalPinWeight: 0
-    mappedVelocity: {x: 0, y: 0, z: 0}
+    mappedVelocity: {x: 0.00001415308, y: -0.000037151833, z: -0.00002830616}
     mappedAngularVelocity: {x: 0, y: 0, z: 0}
     isPropMuscle: 0
     index: 6
     ignoreTargetVelocity: 0
     targetMappedPosition: {x: 0, y: 0, z: 0}
-    targetMappedRotation: {x: 0, y: 0, z: 0, w: 1}
+    targetMappedRotation: {x: -0.04498187, y: -0.3168568, z: 0.7271894, w: 0.60726786}
     targetSampledPosition: {x: 0, y: 0, z: 0}
     targetSampledRotation: {x: 0, y: 0, z: 0, w: 1}
   - name: mixamorig:LeftForeArm
@@ -6334,31 +6649,31 @@ MonoBehaviour:
     props:
       group: 3
       mappingWeight: 1
-      pinWeight: 1
-      muscleWeight: 1
+      pinWeight: 0
+      muscleWeight: 0
       muscleDamper: 1
       internalCollisionIgnores:
         ignoreAll: 0
         muscles: []
         groups: 
       animatedTargetChildren: []
-    parentIndexes: 
+    parentIndexes: 060000000500000000000000
     childIndexes: 
-    childFlags: 
-    kinshipDegrees: 
+    childFlags: 0000000000000000000000
+    kinshipDegrees: 0300000004000000050000000400000005000000020000000100000000000000030000000300000004000000
     broadcaster: {fileID: 0}
     jointBreakBroadcaster: {fileID: 0}
-    positionOffset: {x: 0, y: 0, z: 0}
+    positionOffset: {x: -1.0089751, y: 0.7010628, z: -0.1565342}
     additionalPin: {fileID: 0}
     additionalPinTarget: {fileID: 0}
     additionalPinWeight: 0
-    mappedVelocity: {x: 0, y: 0, z: 0}
+    mappedVelocity: {x: -0.00001415308, y: -0.000033613564, z: 0}
     mappedAngularVelocity: {x: 0, y: 0, z: 0}
     isPropMuscle: 0
     index: 7
     ignoreTargetVelocity: 0
     targetMappedPosition: {x: 0, y: 0, z: 0}
-    targetMappedRotation: {x: 0, y: 0, z: 0, w: 1}
+    targetMappedRotation: {x: -0.1862453, y: -0.28170618, z: 0.6846387, w: 0.64592934}
     targetSampledPosition: {x: 0, y: 0, z: 0}
     targetSampledRotation: {x: 0, y: 0, z: 0, w: 1}
   - name: mixamorig:Head
@@ -6375,23 +6690,23 @@ MonoBehaviour:
         muscles: []
         groups: 
       animatedTargetChildren: []
-    parentIndexes: 
+    parentIndexes: 0500000000000000
     childIndexes: 
-    childFlags: 
-    kinshipDegrees: 
+    childFlags: 0000000000000000000000
+    kinshipDegrees: 0200000003000000040000000300000004000000010000000200000003000000000000000200000003000000
     broadcaster: {fileID: 0}
     jointBreakBroadcaster: {fileID: 0}
-    positionOffset: {x: 0, y: 0, z: 0}
+    positionOffset: {x: -1.6062726, y: 1.166472, z: -0.5320468}
     additionalPin: {fileID: 0}
     additionalPinTarget: {fileID: 0}
     additionalPinWeight: 0
-    mappedVelocity: {x: 0, y: 0, z: 0}
+    mappedVelocity: {x: 0.00002122962, y: -0.00000707654, z: 0}
     mappedAngularVelocity: {x: 0, y: 0, z: 0}
     isPropMuscle: 0
     index: 8
     ignoreTargetVelocity: 0
     targetMappedPosition: {x: 0, y: 0, z: 0}
-    targetMappedRotation: {x: 0, y: 0, z: 0, w: 1}
+    targetMappedRotation: {x: -0.43259573, y: -0.59110993, z: -0.50162095, w: 0.46024638}
     targetSampledPosition: {x: 0, y: 0, z: 0}
     targetSampledRotation: {x: 0, y: 0, z: 0, w: 1}
   - name: mixamorig:RightArm
@@ -6400,31 +6715,31 @@ MonoBehaviour:
     props:
       group: 3
       mappingWeight: 1
-      pinWeight: 1
-      muscleWeight: 1
+      pinWeight: 0
+      muscleWeight: 0
       muscleDamper: 1
       internalCollisionIgnores:
         ignoreAll: 0
         muscles: []
         groups: 
       animatedTargetChildren: []
-    parentIndexes: 
-    childIndexes: 
-    childFlags: 
-    kinshipDegrees: 
+    parentIndexes: 0500000000000000
+    childIndexes: 0a000000
+    childFlags: 0000000000000000000001
+    kinshipDegrees: 0200000003000000040000000300000004000000010000000200000003000000020000000000000001000000
     broadcaster: {fileID: 0}
     jointBreakBroadcaster: {fileID: 0}
-    positionOffset: {x: 0, y: 0, z: 0}
+    positionOffset: {x: -1.4306352, y: 0.9249121, z: -0.5781584}
     additionalPin: {fileID: 0}
     additionalPinTarget: {fileID: 0}
     additionalPinWeight: 0
-    mappedVelocity: {x: 0, y: 0, z: 0}
+    mappedVelocity: {x: 0, y: -0.00000353827, z: 0}
     mappedAngularVelocity: {x: 0, y: 0, z: 0}
     isPropMuscle: 0
     index: 9
     ignoreTargetVelocity: 0
     targetMappedPosition: {x: 0, y: 0, z: 0}
-    targetMappedRotation: {x: 0, y: 0, z: 0, w: 1}
+    targetMappedRotation: {x: 0.71980685, y: -0.6824211, z: 0.07907262, w: 0.099637575}
     targetSampledPosition: {x: 0, y: 0, z: 0}
     targetSampledRotation: {x: 0, y: 0, z: 0, w: 1}
   - name: mixamorig:RightForeArm
@@ -6441,23 +6756,23 @@ MonoBehaviour:
         muscles: []
         groups: 
       animatedTargetChildren: []
-    parentIndexes: 
+    parentIndexes: 090000000500000000000000
     childIndexes: 
-    childFlags: 
-    kinshipDegrees: 
+    childFlags: 0000000000000000000000
+    kinshipDegrees: 0300000004000000050000000400000005000000020000000300000004000000030000000100000000000000
     broadcaster: {fileID: 0}
     jointBreakBroadcaster: {fileID: 0}
-    positionOffset: {x: 0, y: 0, z: 0}
+    positionOffset: {x: -1.2026064, y: 0.6787393, z: -0.6394267}
     additionalPin: {fileID: 0}
     additionalPinTarget: {fileID: 0}
     additionalPinWeight: 0
-    mappedVelocity: {x: 0, y: 0, z: 0}
+    mappedVelocity: {x: -0.00001415308, y: -0.00001415308, z: 0}
     mappedAngularVelocity: {x: 0, y: 0, z: 0}
     isPropMuscle: 0
     index: 10
     ignoreTargetVelocity: 0
     targetMappedPosition: {x: 0, y: 0, z: 0}
-    targetMappedRotation: {x: 0, y: 0, z: 0, w: 1}
+    targetMappedRotation: {x: 0.7116415, y: -0.69551456, z: 0.010722212, w: 0.098545045}
     targetSampledPosition: {x: 0, y: 0, z: 0}
     targetSampledRotation: {x: 0, y: 0, z: 0, w: 1}
   propMuscles: []
@@ -6497,3 +6812,6 @@ SceneRoots:
   - {fileID: 2004982017}
   - {fileID: 1350032447}
   - {fileID: 1149880141}
+  - {fileID: 1429035729}
+  - {fileID: 1267464363}
+  - {fileID: 250506407}

@@ -13,13 +13,15 @@ public class GameManager : MonoBehaviour
     private Vector3 screenPoint;
     [SerializeField] private Transform _transformSelect;
     private RaycastHit hit;
+    private bool _canDragging = false;
     private bool _isDragging = false;
     [SerializeField] private float _forceImpact;
     private Rigidbody _rb;
+    private float mass;
 
     private void Start()
     {
-       // _resetButton.onClick.AddListener(_ragdollControll.AnimatorState);
+        // _resetButton.onClick.AddListener(_ragdollControll.AnimatorState);
         _ragdollBtn.onClick.AddListener(() => { _ragdollControll.SetStateRagdoll(false); });
         _camera = Camera.main;
     }
@@ -51,27 +53,32 @@ public class GameManager : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, layer))
         {
-            _rb = hit.transform.GetComponent<Rigidbody>();
             _transformSelect = hit.collider.transform;
             _objectSelected = hit.transform.GetComponentInParent<IInteract>();
-            Debug.Log("Hit object" + hit.transform.name);
+            // Debug.Log("Hit object" + hit.transform.name);
         }
 
-        if (_isDragging)
+        if (_canDragging)
         {
-            Debug.Log(" _isDragging");
-
             OnfingerDrag(finger);
         }
     }
 
     private void OnfingerDown(LeanFinger finger)
     {
-        _isDragging = true;
-        //  offset = _camera.ScreenToWorldPoint(_transformSelect.position) - _camera.ScreenToWorldPoint(finger.ScreenPosition);
         screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
-
-        offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+        if (_transformSelect != null)
+        {
+            _rb = _transformSelect.GetComponent<Rigidbody>();
+        }
+        if (_rb != null)
+        {
+            mass = _rb.mass;
+            Debug.Log($"Fingerdown Mass {mass} + _rb.mass {_rb.mass} ");
+        }
+        _canDragging = true;
+        _isDragging = true;
+        offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(finger.ScreenPosition.x, finger.ScreenPosition.y, screenPoint.z));
     }
 
     private void OnfingerDrag(LeanFinger finger)
@@ -79,12 +86,18 @@ public class GameManager : MonoBehaviour
         if (_transformSelect != null)
         {
             // Vector3 currentPosition = _camera.ScreenToWorldPoint(finger.ScreenPosition) + offset;
-            Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-            Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
-            curPosition = Vector3.Normalize( curPosition );
-            Debug.Log($"currentPosition {curPosition} offset {offset}");
-            
-            _rb.AddForceAtPosition(curPosition * _forceImpact, screenPoint, ForceMode.Acceleration);
+            Vector3 curScreenPoint = new Vector3(finger.ScreenPosition.x, finger.ScreenPosition.y, screenPoint.z);
+            Vector3 curPosition = _camera.ScreenToWorldPoint(curScreenPoint) + offset;
+            curPosition = Vector3.Normalize(curPosition);
+              Debug.Log($"currentPosition {curPosition} offset {offset} magnitude {offset.magnitude}");
+            if (_isDragging == true && _rb != null)
+            {
+                _rb.mass = 75;
+                Debug.Log("RbMass " + _rb.mass);
+                _isDragging = false;
+            }
+              _rb.AddForceAtPosition(curPosition * (offset.magnitude), screenPoint,ForceMode.Impulse);
+            //_rb.mass = mass;
             //  _objectSelected.OnDrag(curPosition);
             // LeanDragCamera.
         }
@@ -92,8 +105,16 @@ public class GameManager : MonoBehaviour
 
     private void OnfingerUp(LeanFinger finger)
     {
-        _objectSelected = null;
         _isDragging = false;
+        _canDragging = false;
+        if ((_rb != null))
+        {
+            _rb.mass = mass;
+            Debug.Log($"FingerUp Mass {mass} + _rb.mass {_rb.mass} ");
+
+            _rb = null;
+        }
+        _objectSelected = null;
         _transformSelect = null;
         // _objectSelected.OnRelease();
     }
