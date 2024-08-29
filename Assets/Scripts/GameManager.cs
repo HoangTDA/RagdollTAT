@@ -1,4 +1,5 @@
 using Lean.Touch;
+using RootMotion.Dynamics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,12 +19,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float _forceImpact;
     private Rigidbody _rb;
     private float mass;
+    [SerializeField] private PuppetMaster _puppetMaster;
+    private ClaimPointControll _pointAddforce;
+    [SerializeField] private LineRenderer _lineRenderer;
+    [SerializeField] private GameObject _sphere;
+    [SerializeField] private Texture2D _cursorTexture;
 
     private void Start()
     {
         // _resetButton.onClick.AddListener(_ragdollControll.AnimatorState);
         _ragdollBtn.onClick.AddListener(() => { _ragdollControll.SetStateRagdoll(false); });
         _camera = Camera.main;
+        Cursor.visible = true;
     }
 
     private void OnEnable()
@@ -66,19 +73,26 @@ public class GameManager : MonoBehaviour
 
     private void OnfingerDown(LeanFinger finger)
     {
-        screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+        //test
+        // GameObject go = Instantiate(_sphere);
+        //// go.transform.position = _camera.ScreenToWorldPoint(finger.ScreenPosition);
+        // go.transform.position = _camera.ScreenToViewportPoint( Input.mousePosition);
+
         if (_transformSelect != null)
         {
-            _rb = _transformSelect.GetComponent<Rigidbody>();
+            _puppetMaster.pinWeight = 0.2f;
+            //   _puppetMaster.muscleWeight = 0f;
+            screenPoint = _camera.WorldToScreenPoint(_transformSelect.transform.position);
+            _pointAddforce = _transformSelect.GetComponentInChildren<ClaimPointControll>();
+            _rb = _pointAddforce.GetComponent<Rigidbody>();
+            offset = _transformSelect.transform.position - _camera.ScreenToWorldPoint(new Vector3(finger.ScreenPosition.x, finger.ScreenPosition.y, screenPoint.z));
         }
         if (_rb != null)
         {
             mass = _rb.mass;
-            Debug.Log($"Fingerdown Mass {mass} + _rb.mass {_rb.mass} ");
         }
         _canDragging = true;
         _isDragging = true;
-        offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(finger.ScreenPosition.x, finger.ScreenPosition.y, screenPoint.z));
     }
 
     private void OnfingerDrag(LeanFinger finger)
@@ -88,15 +102,32 @@ public class GameManager : MonoBehaviour
             // Vector3 currentPosition = _camera.ScreenToWorldPoint(finger.ScreenPosition) + offset;
             Vector3 curScreenPoint = new Vector3(finger.ScreenPosition.x, finger.ScreenPosition.y, screenPoint.z);
             Vector3 curPosition = _camera.ScreenToWorldPoint(curScreenPoint) + offset;
-            curPosition = Vector3.Normalize(curPosition);
-              Debug.Log($"currentPosition {curPosition} offset {offset} magnitude {offset.magnitude}");
+            _sphere.transform.position = curPosition;
+            Vector3 direction = curPosition - _rb.transform.position;
+
             if (_isDragging == true && _rb != null)
             {
                 _rb.mass = 75;
-                Debug.Log("RbMass " + _rb.mass);
                 _isDragging = false;
             }
-              _rb.AddForceAtPosition(curPosition * (offset.magnitude), screenPoint,ForceMode.Impulse);
+            if (_pointAddforce != null)
+            {
+                Vector3 pointadd = _camera.ScreenToWorldPoint(_pointAddforce.transform.position);
+                Vector3 newPosiont = _camera.ScreenToWorldPoint(finger.ScreenPosition);
+                float distance = Vector3.Distance(newPosiont, pointadd);
+
+                Vector3[] drawLinePoint = new Vector3[] { _pointAddforce.transform.position, curPosition };
+                DrawLineRenderer(drawLinePoint);
+                curPosition.z = 0;
+                curPosition = Vector3.Normalize(curPosition);
+                Debug.Log($"_rb.velocity.magnitude {_rb.velocity.magnitude} velocity {_rb.velocity} ");
+                Debug.Log($"currentPosition {curPosition}  distance {distance}");
+                if (_rb.velocity.magnitude < 3)
+                {
+                    _rb.velocity = direction*_forceImpact;
+                    //_rb.AddForce(direction.normalized * (distance * _forceImpact), ForceMode.Acceleration);
+                }
+            }
             //_rb.mass = mass;
             //  _objectSelected.OnDrag(curPosition);
             // LeanDragCamera.
@@ -110,7 +141,6 @@ public class GameManager : MonoBehaviour
         if ((_rb != null))
         {
             _rb.mass = mass;
-            Debug.Log($"FingerUp Mass {mass} + _rb.mass {_rb.mass} ");
 
             _rb = null;
         }
@@ -129,5 +159,12 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
+    }
+
+    private void DrawLineRenderer(Vector3[] pointLine)
+    {
+        _lineRenderer.positionCount = 2;
+        _lineRenderer.startWidth = 0.2f;
+        _lineRenderer.SetPositions(pointLine);
     }
 }
